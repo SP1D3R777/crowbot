@@ -1,0 +1,20 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', message => {
+  if (message.content === '!vpn') {
+    const embed = new Discord.MessageEmbed()
+      .setColor('#00ff00') // Couleur de l'embed (vert dans ce cas)
+      .setTitle('VPN ACTIF')
+      .setDescription("Aucune donnée n'est retraçable");
+
+    message.channel.send(embed);
+  }
+});
+
+// Remplacez 'YOUR_BOT_TOKEN' par votre propre jeton de bot Discord
+client.login('MTE0NjcxMjg3MTAxNTgyOTUyNQ.GW3pcC.aHrNLrlez1viLwCjcZAqQObdvJtlE6HuGyc-6s');
